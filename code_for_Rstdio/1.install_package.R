@@ -1,0 +1,10 @@
+# 安裝所需套件（若未安裝）
+# BiocManager::install("VariantAnnotation")
+# install.packages("devtools")
+# devtools::install_github("MRCIEU/TwoSampleMR")
+# devtools::install_github("qingyuanzhao/mr.raps")
+# devtools::install_github("mrcieu/gwasglue")
+# devtools::install_github("MRCIEU/gwasvcf")
+# install.packages("CMplot")
+# install.packages("MendelianRandomization")
+# install.packages("R.utils")
