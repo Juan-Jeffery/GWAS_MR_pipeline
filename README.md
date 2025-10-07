@@ -1,11 +1,11 @@
-# 🧬 GWAS MR Pipeline
+# GWAS MR Pipeline
 
 This pipeline performs **Mendelian Randomization (MR)** analysis using GWAS summary statistics.  
 Please make sure the environment and parameters are correctly configured before running.
 
 ---
 
-## 🚀 Environment Setup
+## Environment Setup
 
 Before execution, activate the Conda environment:
 
@@ -15,7 +15,7 @@ conda activate r440_env
 
 ---
 
-## ⚙️ Parameter Settings
+## Parameter Settings
 
 Make sure all parameters are properly filled in:
 
@@ -35,7 +35,7 @@ Make sure all parameters are properly filled in:
 
 ---
 
-## 🧩 Execution
+## Execution
 
 Run the main MR pipeline script:
 
@@ -43,16 +43,9 @@ Run the main MR pipeline script:
 nohup Rscript code/Run_MR_pipeline.R > /home/rd01/result/hb_t2d/697/Process_Detail.log 2>&1 &
 ```
 
-Explanation:
-- `nohup`: Keeps the process running in the background (even after logout)  
-- `Rscript code/Run_MR_pipeline.R`: Path to the main R script  
-- `>`: Redirects output to a log file  
-- `2>&1`: Sends error messages to the same log file  
-- `&`: Runs the process in the background  
-
 ---
 
-## 📂 Output
+## Output
 
 After the analysis completes, results will be saved in the specified `file_path` directory, including:
 - MR result tables  
@@ -60,9 +53,3 @@ After the analysis completes, results will be saved in the specified `file_path`
 - Intermediate files (e.g., harmonized data, filtered SNP list)
 
 ---
-
-## 📖 Notes
-
-- Ensure all required R packages are installed before running `Run_MR_pipeline.R`  
-- Exposure and outcome datasets should use the same genome build (recommended: GRCh37 or GRCh38)  
-- When using custom GWAS files, confirm the column names match the pipeline requirements  
