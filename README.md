@@ -40,7 +40,7 @@ Make sure all parameters are properly filled in:
 Run the main MR pipeline script:
 
 ```bash
-nohup Rscript code/Run_MR_pipeline.R > /home/rd01/result/hb_t2d/697/Process_Detail.log 2>&1 &
+nohup Rscript code/Run_MR_pipeline.R > /home/path/697/Process_Detail.log 2>&1 &
 ```
 
 ---
