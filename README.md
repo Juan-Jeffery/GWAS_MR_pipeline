@@ -7,7 +7,7 @@ Please make sure the environment and parameters are correctly configured before 
 
 ## Environment Setup
 
-Before execution, activate the Conda environment:
+Before execution, activate the Conda environment: 
 
 ```bash
 conda activate r440_env
