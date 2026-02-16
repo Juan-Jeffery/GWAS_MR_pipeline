@@ -28,7 +28,7 @@
 #devtools::install_github("qingyuanzhao/mr.raps")
 
 # 7. 用 devtools 裝 主要執行套件
-#Sys.setenv(GITHUB_PAT = "")
+#Sys.setenv(GITHUB_PAT = "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")
 #BiocManager::install("rtracklayer")
 #BiocManager::install("VariantAnnotation")
 #devtools::install_github("MRCIEU/gwasvcf")

@@ -43,10 +43,9 @@ ld_clump_exposure <- function(file_path, data, pop_n, batch_size = 50000) {
   data_autosome$pos.exposure <- as.integer(data_autosome$pos.exposure)
   data_autosome$effect_allele.exposure <- as.character(data_autosome$effect_allele.exposure)
   data_autosome$other_allele.exposure <- as.character(data_autosome$other_allele.exposure)
-
+  
   # 移除 NA
   data_autosome <- na.omit(data_autosome)
-
   # 分批執行 LD clumping
   n <- nrow(data_autosome)
   clumped_list <- list()
@@ -78,7 +77,8 @@ ld_clump_exposure <- function(file_path, data, pop_n, batch_size = 50000) {
   )
 
   # 寫出 LD 後檔案
-  fwrite(final_clumped, file = file.path(file_path, "exposure.LD.csv"))
+  #fwrite(final_clumped, file = file.path(file_path, "exposure.LD.csv"))
+  fwrite(final_clumped, file.path(file_path, "exposure.LD.csv"))
 
   return(final_clumped)
 }
@@ -86,6 +86,9 @@ ld_clump_exposure <- function(file_path, data, pop_n, batch_size = 50000) {
 
 # ─────────────── Function: F-statistic filter ───────────────
 filter_by_F_statistic <- function(file_path, data, exposure_n) {
+  data$beta.exposure <- as.numeric(data$beta.exposure)
+  data$se.exposure <- as.numeric(data$se.exposure)
+  data$eaf.exposure <- as.numeric(data$eaf.exposure)
   data$samplesize.exposure <- exposure_n
   data[, R2 := 2 * (beta.exposure)^2 * eaf.exposure * (1 - eaf.exposure)]
   data[, F := (samplesize.exposure - 2) * R2 / (1 - R2)]

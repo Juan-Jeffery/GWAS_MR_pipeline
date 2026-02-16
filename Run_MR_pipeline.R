@@ -1,5 +1,5 @@
 # ─────────────── utils ───────────────
-Sys.setenv(OPENGWAS_JWT = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImFwaS1qd3QiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhcGkub3Blbmd3YXMuaW8iLCJhdWQiOiJhcGkub3Blbmd3YXMuaW8iLCJzdWIiOiJqamo4NTM3MTRAZ21haWwuY29tIiwiaWF0IjoxNzU5MjgzNjIyLCJleHAiOjE3NjA0OTMyMjJ9.k5M0sgcxaD1C-rIiWxeWo_YqH1zxlaD_IsBRs954yHby5oiUHlXn7l8werE5HKE17hW1raBpJUXCR52Z42XAy94BaIy-8OeK7jBcr2m2Diceo8zjoGyOmuvO-aev1Fg0XcgpGga8jKYqJdMsxEF3q2HiImPlQUXPSb6zTsO-5xaUkhwMaakC4rzSoOI9P8LguANGsqGmExmhUXcLWZtcjcpLdqHdU8hDARsHvN0L3aMjkPulAfiswhRAhQ4ooBgwNy_Du3tigCKEn0_587YoBRaM46TLOPk6UiemMV2raPRqmLmUr90qRIZtX-AJOH5Y82SbaF1Bo_jqHD0wy3E0kg")
+Sys.setenv(OPENGWAS_JWT = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImFwaS1qd3QiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhcGkub3Blbmd3YXMuaW8iLCJhdWQiOiJhcGkub3Blbmd3YXMuaW8iLCJzdWIiOiJqamo4NTM3MTRAZ21haWwuY29tIiwiaWF0IjoxNzcwMjY5ODY2LCJleHAiOjE3NzE0Nzk0NjZ9.WlmLSEY2hjqGXOI8kThLlcv3btbwphHXqDfi9Uh5jdYEzsGf9WtkZH4WhgpOjoCmB1NAv7Q084s8lnmPD2RKTDR6SQyFdFohvMeomWVDQGpGZq3gzUfPtud-sQbKPSuO5uS_vWGcYTJ_ZXA2w79tjaGj3auTrPVt-0YQ8FbDrTX2-wzT5-vu2xvN_ijRdezxOBb4muE6Gf7Ym57fjg-Dq8stXdGdaqI1216nVHg1mwrfdpw27E050eOg_7V7g60n9Yz979xgn00pY5lV1EhZbuLwO4wGmgwT9LSMNDUB8c_Kt3f90H4FlLDgwHaA44mv_K4HOdjH330-pDFs2GNMNA")
 options(ieugwasr_api = "https://gwas-api.mrcieu.ac.uk/")
 
 
@@ -10,18 +10,19 @@ source("/home/rd01/code/MR_pipeline/4.MR.R")
 source("/home/rd01/code/MR_pipeline/log.R")
 
 # ─────────────── Parameters ───────────────
-exposure_data_raw <- "/home/rd01/data/red_blood_cells/GCST90002391_buildGRCh37_hb.tsv"
-outcome_data_raw <- "/home/rd01/data/t2d_GCST90006934_gwascatalog/GCST90006934_buildGRCh37.tsv.gz"
-file_path <- "/home/rd01/result/hb_t2d/934"
+exposure_data_raw <- "/home/rd01/data/OSA/GCST90475825.tsv.gz"
+outcome_data_raw <- "/home/rd01/data/t2d_GCST90296697_gwascatalog/GCST90296697.tsv.gz"
+file_path <- "/home/rd01/result/osa_t2d/825_697"
 setwd(file_path) 
 
-pval_threshold <- 5e-08
-exposure_n <- 257 #hb 257, hct 523, rbc 721
+pval_threshold <- 5e-6
+exposure_n <- 430325
 pop_n <- "EUR"
-exposure_name <- "GTEx"
+exposure_name <- "OSA"
 outcome_name <- "T2D"
-exposure_variant_id <- "variant_id"
-outcome_variant_id <- "variant_id" 
+exposure_variant_id <- "rsid"
+#exposure_variant_id <- "variant_id"
+outcome_variant_id <- "rs_id" 
 #704,934=variant_id, other=rs_id
 
 # ─────────────── GWAS MR pipeline ───────────────
