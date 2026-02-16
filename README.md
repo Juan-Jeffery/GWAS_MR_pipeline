@@ -1,11 +1,13 @@
 # GWAS MR Pipeline
+<img width="1031" src="https://github.com/Juan-Jeffery/GWAS_MR_pipeline/blob/main/MR_pipeline.png" width="1000" height="265">
 
-This pipeline performs **Mendelian Randomization (MR)** analysis using GWAS summary statistics.  
-Please make sure the environment and parameters are correctly configured before running.
+An automated R pipeline for Mendelian Randomization (MR) analysis using GWAS summary statistics, covering the entire workflow from raw data processing to visualization. Compatible with both local and server environments, the pipeline supports multiple input formats (TSV, CSV, VCF) and automates key steps including P-value filtering and LD clumping. By integrating with OpenGWAS, it performs comprehensive MR analysis and automatically generates data reports and publication-ready plots.
+
 
 ---
 
 ## Environment Setup
+Please make sure the environment and parameters are correctly configured before running.
 
 Before execution, activate the Conda environment: 
 
