@@ -1,5 +1,5 @@
 # ─────────────── utils ───────────────
-Sys.setenv(OPENGWAS_JWT = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImFwaS1qd3QiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhcGkub3Blbmd3YXMuaW8iLCJhdWQiOiJhcGkub3Blbmd3YXMuaW8iLCJzdWIiOiJqamo4NTM3MTRAZ21haWwuY29tIiwiaWF0IjoxNzcwMjY5ODY2LCJleHAiOjE3NzE0Nzk0NjZ9.WlmLSEY2hjqGXOI8kThLlcv3btbwphHXqDfi9Uh5jdYEzsGf9WtkZH4WhgpOjoCmB1NAv7Q084s8lnmPD2RKTDR6SQyFdFohvMeomWVDQGpGZq3gzUfPtud-sQbKPSuO5uS_vWGcYTJ_ZXA2w79tjaGj3auTrPVt-0YQ8FbDrTX2-wzT5-vu2xvN_ijRdezxOBb4muE6Gf7Ym57fjg-Dq8stXdGdaqI1216nVHg1mwrfdpw27E050eOg_7V7g60n9Yz979xgn00pY5lV1EhZbuLwO4wGmgwT9LSMNDUB8c_Kt3f90H4FlLDgwHaA44mv_K4HOdjH330-pDFs2GNMNA")
+Sys.setenv(OPENGWAS_JWT = "")
 options(ieugwasr_api = "https://gwas-api.mrcieu.ac.uk/")
 
 
