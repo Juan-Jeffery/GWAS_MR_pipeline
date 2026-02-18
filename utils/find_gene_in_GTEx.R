@@ -17,7 +17,7 @@ results <- data.frame(Tissue = character(), SNP_count = integer(), stringsAsFact
 
 # Step 3: 迴圈處理每個檔案
 for (f in files) {
-  tissue <- strsplit(basename(f), "\\.")[[1]][1]  # 取組織名稱
+  tissue <- strsplit(basename(f), "\\.")[[1]][1]  # tissue name
   message("處理中: ", tissue)
   
   # 讀取檔案
@@ -39,8 +39,8 @@ for (f in files) {
 dir.create(dirname(output_file), recursive = TRUE, showWarnings = FALSE)
 write.table(results, file = output_file, sep = "\t", row.names = FALSE, quote = FALSE)
 
-message("✅ 完成！結果已存到 ", output_file)
+message("finish ", output_file)
 
 # Step 5: 移除解壓縮資料夾
 #unlink(extract_dir, recursive = TRUE)
-message("🗑️ 已刪除 ", extract_dir)
+message("remove dir ", extract_dir)
