@@ -20,7 +20,7 @@ for (f in files) {
   tissue <- strsplit(basename(f), "\\.")[[1]][1]  # tissue name
   message("處理中: ", tissue)
   
-  # 讀取檔案
+  # 讀檔
   dt <- fread(cmd = paste("zcat", f), sep = "\t", header = TRUE, data.table = FALSE)
   
   # 去掉基因版本號
