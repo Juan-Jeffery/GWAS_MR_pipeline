@@ -7,7 +7,7 @@ extract_dir <- "/home/rd01/data/GTEx/GTEx_Analysis_v8_eQTL/"
 target_gene <- "ENSG00000007171"
 output_file <- "/home/rd01/test_result/test_all_tissue/ENSG00000007171_snp_counts.tsv"
 
-# Step 1: 解壓縮 tar 檔
+# Step 1: 解壓縮
 #untar(tar_path, exdir = extract_dir)
 
 # Step 2: 找出所有組織檔案
