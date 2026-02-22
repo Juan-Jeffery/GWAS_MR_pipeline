@@ -1,7 +1,7 @@
 library(data.table)
 library(dplyr)
 
-# 你的函數（不用改）
+#
 read_and_format_exposure_tsv <- function(exposure_data_raw) {
   data_raw <- fread(file.path(exposure_data_raw), sep = "\t", header = TRUE)
   required_cols <- c(
