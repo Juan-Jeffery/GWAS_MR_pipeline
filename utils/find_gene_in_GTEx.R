@@ -1,46 +1,42 @@
+#!/usr/bin/env Rscript
 library(data.table)
-library(stringr)
 
-# 路徑設定
-tar_path <- "/home/rd01/data/GTEx/GTEx_Analysis_v8_eQTL.tar"
+# ==== 1. Configuration ====
 extract_dir <- "/home/rd01/data/GTEx/GTEx_Analysis_v8_eQTL/"
 target_gene <- "ENSG00000007171"
 output_file <- "/home/rd01/test_result/test_all_tissue/ENSG00000007171_snp_counts.tsv"
 
-# Step 1: 解壓縮
-#untar(tar_path, exdir = extract_dir)
+# Find all eQTL significance files
+files <- list.files(extract_dir, pattern = "signif_variant_gene_pairs.txt.gz$", 
+                    full.names = TRUE, recursive = TRUE)
 
-# Step 2: 找出所有組織檔案
-files <- list.files(extract_dir, pattern = "signif_variant_gene_pairs.txt.gz$", full.names = TRUE, recursive = TRUE)
+message("Found ", length(files), " tissue files. Starting processing...")
 
-results <- data.frame(Tissue = character(), SNP_count = integer(), stringsAsFactors = FALSE)
+# ==== 2. Process Tissues ====
+results_list <- lapply(files, function(f) {
+  # Extract tissue name from filename
+  tissue_name <- tstrsplit(basename(f), "\\.", fixed = TRUE)[[1]]
+  message("Processing: ", tissue_name)
+  
+  # Read and filter using data.table for speed
+  dt <- fread(f, sep = "\t", select = c("gene_id", "variant_id"))
+  
+  # Strip gene version and filter
+  dt[, gene_base := sub("\\..*", "", gene_id)]
+  subset_dt <- dt[gene_base == target_gene]
+  
+  # Count unique SNPs
+  return(data.table(
+    Tissue = tissue_name, 
+    SNP_count = uniqueN(subset_dt$variant_id)
+  ))
+})
 
-# Step 3: 迴圈處理每個檔案
-for (f in files) {
-  tissue <- strsplit(basename(f), "\\.")[[1]][1]  # tissue name
-  message("處理中: ", tissue)
-  
-  # 讀檔
-  dt <- fread(cmd = paste("zcat", f), sep = "\t", header = TRUE, data.table = FALSE)
-  
-  # 去掉基因版本號
-  dt$gene_id_noversion <- sub("\\..*", "", dt$gene_id)
-  
-  # 篩選基因
-  subset <- dt[dt$gene_id_noversion == target_gene, ]
-  
-  # 計算 SNP 數量
-  snp_count <- length(unique(subset$variant_id))
-  
-  results <- rbind(results, data.frame(Tissue = tissue, SNP_count = snp_count, stringsAsFactors = FALSE))
-}
+# ==== 3. Aggregate & Export ====
+final_results <- rbindlist(results_list)
 
-# Step 4: 輸出結果
+# Create output directory and save
 dir.create(dirname(output_file), recursive = TRUE, showWarnings = FALSE)
-write.table(results, file = output_file, sep = "\t", row.names = FALSE, quote = FALSE)
+fwrite(final_results, output_file, sep = "\t", quote = FALSE)
 
-message("finish ", output_file)
-
-# Step 5: 移除解壓縮資料夾
-#unlink(extract_dir, recursive = TRUE)
-message("remove dir ", extract_dir)
+message("Finished. Results saved to: ", output_file)
