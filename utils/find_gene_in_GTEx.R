@@ -2,9 +2,9 @@
 library(data.table)
 
 # ==== 1. Configuration ====
-extract_dir <- "/home/rd01/data/GTEx/GTEx_Analysis_v8_eQTL/"
+extract_dir <- "data/GTEx/GTEx_Analysis_v8_eQTL/"
 target_gene <- "ENSG00000007171"
-output_file <- "/home/rd01/test_result/test_all_tissue/ENSG00000007171_snp_counts.tsv"
+output_file <- "test/test_all_tissue/ENSG00000007171_snp_counts.tsv"
 
 # Find all eQTL significance files
 files <- list.files(extract_dir, pattern = "signif_variant_gene_pairs.txt.gz$", 

@@ -4,9 +4,9 @@ library(data.table)
 check_snps <- c("rs7903146", "rs2237892", "rs13266634", "rs11549407")
 
 datasets <- list(
-  GCST90296697 = "/home/rd01/data/t2d_GCST90296697_gwascatalog/GCST90296697.tsv.gz",
-  GCST90435704 = "/home/rd01/data/t2d_GCST90435704_gwascatalog/GCST90435704.tsv.gz",
-  GCST90006934 = "/home/rd01/data/t2d_GCST90006934_gwascatalog/GCST90006934_buildGRCh37.tsv.gz"
+  GCST90296697 = "data/t2d_GCST90296697_gwascatalog/GCST90296697.tsv.gz",
+  GCST90435704 = "data/t2d_GCST90435704_gwascatalog/GCST90435704.tsv.gz",
+  GCST90006934 = "data/t2d_GCST90006934_gwascatalog/GCST90006934_buildGRCh37.tsv.gz"
 )
 
 results_list <- list()

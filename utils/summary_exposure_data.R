@@ -38,7 +38,7 @@ read_and_format_exposure_tsv <- function(file_path) {
 }
 
 # ─────────────── Execution ───────────────
-exposure_path <- "/home/rd01/data/anemias_GCST90435802_gwascatalog/GCST90435802.tsv.gz"
+exposure_path <- "data/anemias_GCST90435802_gwascatalog/GCST90435802.tsv.gz"
 
 # Load and filter by suggestive significance
 exposure_df <- read_and_format_exposure_tsv(exposure_path)

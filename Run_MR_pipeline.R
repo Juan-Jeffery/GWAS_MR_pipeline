@@ -3,16 +3,16 @@ Sys.setenv(OPENGWAS_JWT = "")
 options(ieugwasr_api = "https://gwas-api.mrcieu.ac.uk/")
 
 
-source("/home/rd01/code/MR_pipeline/1.loading_package.R")
-source("/home/rd01/code/MR_pipeline/2.loading_file.R")
-source("/home/rd01/code/MR_pipeline/3.exposure_data_preprocessing.R")
-source("/home/rd01/code/MR_pipeline/4.MR.R")
-source("/home/rd01/code/MR_pipeline/log.R")
+source("code/MR_pipeline/1.loading_package.R")
+source("code/MR_pipeline/2.loading_file.R")
+source("code/MR_pipeline/3.exposure_data_preprocessing.R")
+source("code/MR_pipeline/4.MR.R")
+source("code/MR_pipeline/log.R")
 
 # ─────────────── Parameters ───────────────
-exposure_data_raw <- "/home/rd01/data/OSA/GCST90475825.tsv.gz"
-outcome_data_raw <- "/home/rd01/data/t2d_GCST90296697_gwascatalog/GCST90296697.tsv.gz"
-file_path <- "/home/rd01/result/osa_t2d/825_697"
+exposure_data_raw <- "data/OSA/GCST90475825.tsv.gz"
+outcome_data_raw <- "data/t2d_GCST90296697_gwascatalog/GCST90296697.tsv.gz"
+file_path <- "result/osa_t2d/825_697"
 setwd(file_path) 
 
 pval_threshold <- 5e-6

@@ -5,12 +5,12 @@ library(GenomicRanges)
 
 # ==== 1. Configuration ====
 # Input paths
-tissue_file <- "/home/rd01/data/GTEx/GTEx_Analysis_v8_eQTL/GTEx_Analysis_v8_eQTL/Muscle_Skeletal.v8.signif_variant_gene_pairs.txt.gz"
-vcf_file    <- "/home/rd01/biomart_ref/All_20180418.vcf.gz"
+tissue_file <- "data/GTEx/GTEx_Analysis_v8_eQTL/GTEx_Analysis_v8_eQTL/Muscle_Skeletal.v8.signif_variant_gene_pairs.txt.gz"
+vcf_file    <- "ref/biomart_ref/All_20180418.vcf.gz"
 
 # Output paths
-snp_out     <- "/home/rd01/result/GTEx_snp/PRKAA1/PRKAA1_Muscle_Skeletal_TargetGenes_eQTL_result.tsv"
-mr_out      <- "/home/rd01/result/GTEx_snp/PRKAA1/PRKAA1_Muscle_Skeletal_TargetGenes_eQTL_MR_result.tsv"
+snp_out     <- "result/GTEx_snp/PRKAA1/PRKAA1_Muscle_Skeletal_TargetGenes_eQTL_result.tsv"
+mr_out      <- "result/GTEx_snp/PRKAA1/PRKAA1_Muscle_Skeletal_TargetGenes_eQTL_MR_result.tsv"
 
 # Metadata
 sample_size <- 803
