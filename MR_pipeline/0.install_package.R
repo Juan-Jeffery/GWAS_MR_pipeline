@@ -1,4 +1,4 @@
-# 1. 安裝 Bioconductor 套件管理器
+# 1. 安裝 Bioconductor 套件管理器 
 #install.packages("BiocManager", repos="https://cloud.r-project.org")
 
 # 2. 裝 CRAN 上的套件
