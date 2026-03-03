@@ -6,7 +6,7 @@ An automated R pipeline for Mendelian Randomization (MR) analysis using GWAS sum
 
 ---
 
-## Environment Setup
+## Environment Setup 
 Please make sure the environment and parameters are correctly configured before running.
 
 Before execution, activate the Conda environment: 
